@@ -65,9 +65,14 @@ function reducer(state, action) {
     case reducerType.PREV_PAGE:
       return { ...state, page: state.page - 1 };
     case reducerType.DELETE_MOVIE: {
-      const updatedLibrary = state.library.filter((movie) => movie.id !== action.id);
-      const updatedActive = state.activeLibrary.filter((movie) => movie.id !== action.id);
-      return { ...state, library: updatedLibrary, activeLibrary: updatedActive };
+      let updatedLibrary = state.library.filter((movie) => movie.id !== action.id);
+      let updatedActive = state.activeLibrary.filter((movie) => movie.id !== action.id);
+      const categories = getCategories(updatedLibrary);
+      if (updatedActive.length === 0) {
+        updatedActive = updatedLibrary;
+      }
+
+      return { ...state, library: updatedLibrary, activeLibrary: updatedActive, categories };
     }
     case reducerType.SET_PAGINATION:
       return { ...state, pagination: action.pagination, page: 0 };
