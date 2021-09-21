@@ -1,0 +1,17 @@
+.Card {
+  position: relative;
+  min-width: 300px;
+  padding: 10px;
+}
+
+.CardClose {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+}
+
+.CardClose:hover {
+  font-weight: bold;
+}

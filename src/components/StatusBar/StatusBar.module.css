@@ -1,0 +1,40 @@
+.StatusBarContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.StatusBar {
+  display: flex;
+  height: 7px;
+  background: gray;
+}
+
+.LikeBar {
+  background: blue;
+  height: 100%;
+}
+
+.StatusBarIndices {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.StatusBarIndices p {
+  cursor: pointer;
+}
+
+.StatusBarIndices p:hover {
+  font-weight: bold;
+}
+
+.StatusBarIndices p:first-child {
+  margin-right: 10px;
+}
+
+.StatusBarIndices p:first-child:hover {
+  color: blue;
+}
+
+.StatusBarIndices p:last-child:hover {
+  color: gray;
+}
